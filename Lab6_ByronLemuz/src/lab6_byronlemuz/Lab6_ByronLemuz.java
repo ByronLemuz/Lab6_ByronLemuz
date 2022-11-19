@@ -30,13 +30,26 @@ public class Lab6_ByronLemuz {
             System.out.println("-------------------------");
             System.out.print("ingrese la opcion que desee: ");
             int opcion = lea.nextInt();
+            System.out.println(opcion);
 
             switch (opcion) {//Byron Lemuz
 
                 case 1: {
-                    
+                    char[][] matriz1 = new char[8][8];
+                    for (int i = 0; i < 8; i++) {
+                        for (int j = 0; j < 8; j++) {
+                            if (i == 0 && j == 0) {
+                                matriz1[i][j] = 'P';
+                            } else {
+                                matriz1[i][j] = '-';
+                            }
+                            
 
+            
                 
+                        }
+                    }
+                    printMatriz( matriz1);
                 }
                 break;
         
@@ -45,6 +58,24 @@ public class Lab6_ByronLemuz {
                 }
                 break;
                 case 3: {
+                    int filas = lea.nextInt();
+                    System.out.print("Ingrese el numero de columnas:");
+                    int columnas = lea.nextInt();
+                    Random rand = new Random();
+                    int minimo = 99;
+                    int maximo = 122;
+                    int[][] matrix = new int[filas][columnas];
+                    for (int i = 0; i < filas; i++) {
+                        for (int j = 0; j < columnas; j++) {
+                            matrix[i][j] = minimo + rand.nextInt((maximo - minimo) + 1);
+
+                        }
+                    }
+
+                    System.out.println();
+                    printMatrix(matrix, filas, columnas);
+                    convertir(matrix, filas, columnas);
+                
 
                 }
                 break;
@@ -56,25 +87,55 @@ public class Lab6_ByronLemuz {
 
             }
 
-        }
-    }
-    
+        }}
     public static void printMatriz(char[][] matriz){
-        for(int j=0; i< matriz.length; i++){
-            for(int j=0; i<matriz[0].length; i++){
+        
+    
+        for(int i=0; i< matriz.length; i++){
+            for(int j=0; j<matriz[0].length; i++){
                 System.out.print(matriz[i][j] + " ");
             }
             System.out.println();
-            System.out.println("Hello, World!");
-        char [][] matriz = new char[8][8];
-        for(int j = 0; i < 8; i++){
-            for(int j = 0; i < 8; i++){
-                if(i == 0 && j == 0)
-                    matriz[i][j] = 'P';
-                else
-                    matriz[i][j] = '-';
-       
+            
+        
+        }
+    }
+    public static void juego(char[][] matriz){
+    for(int i=0; i< matriz.length; i++){
+            for(int j=0; j<matriz[0].length; i++){
+                if ((i==0&& j==2)||(i==0&&j==4)||(i==0&&j==7)||(i==1&&j==7)||(i==2&&j==0)||(i==2&&j==4)||(i==2&&j==6)||(i==3&&j==7)||(i==4&&j==0)||(i==4&&j==2)||(i==4&&j==6)||(i==5&&j==7)||(i==6&&j==0)||(i==6&&j==2)||(i==6&&j==4)||(i==7&&j==0)||(i==7&&j==7)){
+                    
+                
+                
+                    
+                }
+            }
+           
+            
+        
+        }
+    }
+    public static void printMatrix(int matriz[][], int filas, int columnas) {
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print(matriz[i][j] + "-");
+            }
+            System.out.println();
+        }
+    }
 
+    public static void convertir(int[][] matriz, int filas, int columnas) {
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print((char) matriz[i][j] + "-");
+            }
+            System.out.println();
+        }
+    
+    }}
+
+    
+   
 
         
     
